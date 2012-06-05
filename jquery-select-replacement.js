@@ -67,8 +67,8 @@
 					li.append(link);
 					LinkReplacement.wrapper.append(li);
 				});
-				$('.links li:eq(' + options.select + ') a').click();
-				$('label, select', this).hide();
+				$('.links li:eq(' + options.select + ') a', item).click();
+				$('label, select', item).hide();
 			});
 		}
 	});
