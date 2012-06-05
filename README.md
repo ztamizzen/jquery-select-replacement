@@ -50,5 +50,14 @@ A replacement of the vexatious select drop down.
     &lt;li class="thin-pizza"&gt;
         &lt;a class="selected" href="#"&gt;I want a Buzzola&lt;/a&gt;
     &lt;/li&gt;
+    &lt;li class="thin-pizza"&gt;
+        &lt;a class="" href="#"&gt;I want a Margerita&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="big-pizza"&gt;
+        &lt;a class="" href=""&gt;I am hungry!&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="pizza-hut"&gt;
+        &lt;a class="" href=""&gt;Sod this, I'm going to Pizza Hut!&lt;/a&gt;
+    &lt;/li&gt;
 &lt;/ol&gt;
 </code></pre>
