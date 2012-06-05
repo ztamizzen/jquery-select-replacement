@@ -12,7 +12,7 @@ A replacement of the vexatious select drop down.
 
 <pre><code>
 &lt;div class="select-replacement"&gt;
-    &lt;label for="pizza"&gt;Pick a Pizza</label&gt;
+    &lt;label for="pizza"&gt;Pick a Pizza&lt;/label&gt;
     &lt;select id="pizza"&gt;
         &lt;option title="I want a Calzone" data-cls="closed-pizza"&gt;Calzone&lt;/option&gt;
         &lt;option title="I want a Buzzola" data-cls="thin-pizza"&gt;Buzzola&lt;/option&gt;
