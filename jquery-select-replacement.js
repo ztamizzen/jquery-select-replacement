@@ -11,7 +11,7 @@
 			var options = $.extend({
 				select: 0,
 				linksClass: 'links'
-			}, 0),
+			}, o),
 			LinkReplacement = {};
 
 			LinkReplacement.populate = function(parent) {
