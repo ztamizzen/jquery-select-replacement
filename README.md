@@ -10,13 +10,8 @@ A replacement of the vexatious select drop down.
 
 ## Example HTML
 
-<pre><code>
-
-
-<div class="select-replacement">
-
+<pre><code><div class="select-replacement">
     <label for="pizza">Pick a Pizza</label>
-
     <select id="pizza">
         <option title="I want a Calzone" data-cls="closed-pizza">Calzone</option>
         <option title="I want a Buzzola" data-cls="thin-pizza">Buzzola</option>
@@ -24,11 +19,7 @@ A replacement of the vexatious select drop down.
         <option title="I am hungry!" data-cls="big-pizza">Pan Pizza</option>
         <option title="Sod this, I'm going to Pizza Hut!" data-cls="pizza-hut">Meat Lovers</option>
     </select>
-
-</div>
-
-
-</code></pre>
+</div></code></pre>
 
 ## Example Javascript
 
