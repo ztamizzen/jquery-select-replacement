@@ -1,4 +1,5 @@
-$.fn.extend({
+(function( $ ) {
+
     /**
      * Requires the following structure:
      * - Wrapper with label and select
@@ -7,7 +8,7 @@ $.fn.extend({
      *   <option value="ADMIN" title="Is not visible to customer" data-cls="negative">No</option>
      *   attr(title) and data(cls) are REQUIRED
      */
-    linkReplacement:function (o) {
+    $.fn.linkReplacement = function(o) {
         var options = $.extend({
             select:0,
             linksClass:'links'
@@ -70,5 +71,6 @@ $.fn.extend({
             $('.links li:eq(' + options.select + ') a', item).click();
             $('label, select', item).hide();
         });
-    }
-});
+    };
+
+})( jQuery );
