@@ -3,7 +3,9 @@
     /**
      * Requires the following structure:
      * - Wrapper with label and select
-     *
+     *  <wrapper>
+     *      <label>
+     *      <select>
      * Example of how an <option> looks like:
      *   <option value="ADMIN" title="Is not visible to customer" data-cls="negative">No</option>
      *   attr(title) and data(cls) are REQUIRED
