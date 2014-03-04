@@ -12,20 +12,27 @@
      */
     $.fn.linkReplacement = function(o) {
         var options = $.extend({
+            includeLabel: false,
             select:0,
-            linksClass:'links'
+            linksClass:'links',
+            onClickCallback: function() {}
         }, o);
 
         return this.each(function (idx, item) {
             var LinkReplacement = {};
             LinkReplacement.populate = function (parent) {
-                this.label = $('label', parent);
-                this.select = $('select', parent);
-                this.options = this.select.find('option');
-                this.wrapper = $('<ol></ol>');
-                this.wrapper.addClass(options.linksClass);
-                this.visual = $('<div></div>');
-                this.visual.addClass('visual');
+                LinkReplacement.label = $('label', parent);
+                LinkReplacement.select = $('select', parent);
+                LinkReplacement.options = this.select.find('option');
+                LinkReplacement.wrapper = $('<ol></ol>');
+                LinkReplacement.wrapper.addClass(options.linksClass);
+                LinkReplacement.visual = $('<div></div>');
+                LinkReplacement.visual.addClass('visual');
+                if (options.includeLabel) {
+                    LinkReplacement.visualLabel = $('<span></span>');
+                    LinkReplacement.visualLabel.text(LinkReplacement.label.text());
+                    LinkReplacement.visual.append(LinkReplacement.visualLabel);
+                }
             };
 
             LinkReplacement.click = function (e, i) {
@@ -37,6 +44,10 @@
                 $(LinkReplacement.options[i]).attr('selected', 'selected');
                 LinkReplacement.selectedValue(me);
                 LinkReplacement.wrapper.fadeOut(300);
+                if ( typeof options.onClickCallback === 'function' ) {
+                    options.onClickCallback.call(this,
+                        LinkReplacement.options[i].text);
+                }
                 return false;
             };
 
@@ -44,9 +55,14 @@
                 var me = $(item.parent().html());
                 me.removeClass('selected');
                 me.removeAttr('class');
-                this.visual.empty();
-                this.visual.append(me);
-                this.wrapper.fadeOut(200);
+                LinkReplacement.visual.empty();
+                if (options.includeLabel) {
+                    LinkReplacement.visualLabel = $('<span></span>');
+                    LinkReplacement.visualLabel.text(LinkReplacement.label.text());
+                    LinkReplacement.visual.append(LinkReplacement.visualLabel);
+                }
+                LinkReplacement.visual.append(me);
+                LinkReplacement.wrapper.fadeOut(200);
                 me.on('click', function (e) {
                     e.preventDefault();
                     LinkReplacement.wrapper.fadeIn(300);
