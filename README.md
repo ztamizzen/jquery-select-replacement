@@ -7,8 +7,8 @@ A replacement of the vexatious select drop down.
 - You _wrap_ the `select` and `label` in a `div` (or your element of choice).
 - You assign the attribute `title` with a more descriptive replacement of the `text value` to the `<option>`.
 - You assign the data attribute of `cls` (short for class as in `className`) to all `<option>`.
-
-## Example HTML
+- The `cls` is not required, it's just for extra styling. Nice-to-have.
+- The `title` isn't required either since the latest update, the plugin falls back to `text` and then `value`.
 
 <pre><code>&lt;div class="select-replacement"&gt;
     &lt;label for="pizza"&gt;Pick a Pizza&lt;/label&gt;
