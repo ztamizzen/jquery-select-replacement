@@ -56,7 +56,7 @@
             $(item).append(LinkReplacement.wrapper);
             LinkReplacement.options.each(function (i, elm) {
                 var li = $('<li></li>'),
-                    title = $(this).attr('title'),
+                    title = $(this).attr('title') || this.text || this.value,
                     link = $('<a></a>');
                 elm = $(elm);
                 li.addClass(elm.data('cls'));
@@ -68,7 +68,7 @@
                 li.append(link);
                 LinkReplacement.wrapper.append(li);
             });
-            $('.links li:eq(' + options.select + ') a', item).click();
+            $('.' + linksClass + ' li:eq(' + options.select + ') a', item).click();
             $('label, select', item).hide();
         });
     };
